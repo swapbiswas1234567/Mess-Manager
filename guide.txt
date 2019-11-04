@@ -1,0 +1,137 @@
+1. ///////////Iniial declaration
+Connection conn = null;
+    PreparedStatement psmt = null;
+    ResultSet rs = null;
+    DefaultTableModel tm = null;
+    DecimalFormat df = new DecimalFormat("####0.000");
+	
+	
+	
+2.how to write
+tm = (DefaultTableModel)tableName.getModel(); //table point
+
+
+try{
+	psmt = conn.prepareStatement("SELECT itemname FROM store");
+	psmt.setInt(1, a);
+	psmt.setString(2, s);
+	.
+	.
+	.
+	.
+	rs = psmt.executeQuery();   or      psmt.execue();
+
+	while(rs.next()){
+		int a = rs.getInt(1);
+		Double d = rs.getDouble(2);
+		String s = rs.getString(3);
+		.
+		.
+		.
+		.
+	}
+
+	psm.close();
+	rs.close();
+}
+
+catch(Excepion e){
+	
+}	
+
+
+3. JoptionPane
+JOptionPane.showMessageDialog(null, "Body", "Header", JOptionPane.ERROR_MESSAGE);
+JOptionPane.showMessageDialog(null, "Body", "Header", JOptionPane.INFORMATION_MESSAGE);
+
+String itemName = null;
+        itemName = JOptionPane.showInputDialog("Header");
+        
+        if(itemName == null){
+            JOptionPane.showMessageDialog(null, "No Item Entered!", "Alert!", JOptionPane.ERROR_MESSAGE); 
+            return;
+        }
+        
+        itemName = itemName.trim();
+        if(itemName.equals("")){
+            JOptionPane.showMessageDialog(null, "No Item Entered!", "Alert!", JOptionPane.ERROR_MESSAGE); 
+            return;
+        }
+		
+		
+
+4. Rules of input of string
+String s = txtbox.getText().toString().trim();
+
+
+5. Parse
+int a = Integer.parseInt(stringName);
+Double d = Double.parseDouble(stringName);
+
+6. ImageSet
+void imageSet(JLabel x, String imgname){
+	ImageIcon myimage =  new ImageIcon(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/newpackage/"+imgname)));
+	Image img1 = myimage.getImage();
+	Image img2 = img1.getScaledInstance(x.getWidth(), x.getHeight(), Image.SCALE_SMOOTH);
+	ImageIcon i = new ImageIcon(img2);
+	x.setIcon(i);
+}
+
+
+7. Input Message Diaog
+String itemName = null;
+        itemName = JOptionPane.showInputDialog("Item Name");
+        
+        if(itemName == null){
+            JOptionPane.showMessageDialog(null, "No Item Entered!", "Alert!", JOptionPane.ERROR_MESSAGE); 
+            return;
+        }
+        
+        itemName = itemName.trim();
+        if(itemName.equals("")){
+            JOptionPane.showMessageDialog(null, "No Item Entered!", "Alert!", JOptionPane.ERROR_MESSAGE); 
+            return;
+        }
+		
+8. Cross Button
+
+JFrame frame = this;
+        frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);        
+        frame.addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent evt) {
+                try{
+                    Menu m = new Menu();
+                    m.setVisible(true);
+                    frame.setVisible(false);
+                    conn.close();
+                }catch(Exception e){
+                    JOptionPane.showMessageDialog(null, "Oops! There are some problems!", "Unknown Error Occured!", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        });
+		
+		
+		
+#STUDY_TOUR_2019
+Please read the post fully.
+
+1. Hope all of you are eagerly waiting for the greatest tour of your CSE life.
+I have uploaded the list of interested students including military officers.
+Please check your roll & phone no.
+
+2. Expenditure:
+The expenditure is divided into two parts. 
+i)  Overall
+ii) Personal
+"Overall expenditure" includes ticket, hotel booking, breakfast, bus hiring in coxs bazar, first aid cost.
+"Personal expenditure" includes your food cost (excluding breakfast) & your refreshment cost for example beach bike riding.
+so you will have to pay 2000/= for "overall expenditure". The fund that will come from MIST will also be added to "overall expenditure".
+You must pay this 2000/= on next sunday for confirming your tour. 
+
+We are estimating that, your "personal expenditure" will not cross 1500/=. So your total estimated cost is around (2000 + 1500) = 3500/=.
+If we can save money from the "overall expenditure", then we will discuss about the policy after the tour.
+
+3. Tour Plan: (May Change)
+27th Sept (Friday):     Journey starts at 7:00 pm.
+28th Sept (Saturday) :  Visit to Cox's Bazar
+29th Sept (Sunday) :    Visit to BSCCL office & return to Dhaka at night

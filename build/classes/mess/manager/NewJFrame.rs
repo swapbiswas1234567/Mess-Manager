@@ -1,0 +1,6 @@
+mess.manager.CustomComparatorRooms
+mess.manager.NewJFrame
+mess.manager.CustomComparatorDues
+mess.manager.CustomComparatorRoom
+mess.manager.CustomComparatorDue
+mess.manager.CustomComparatorIntegerRoom
